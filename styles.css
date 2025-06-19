@@ -128,3 +128,42 @@ button {
   font-size: 2rem;
   color: #ffde59;
 }
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  button, select {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .center-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #solution-display {
+    font-size: 1.2rem;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #solution-controls,
+  #solution-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  #question-content {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+}

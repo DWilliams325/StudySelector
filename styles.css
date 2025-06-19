@@ -1,0 +1,93 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: rgb(3, 30, 80) ; /* dark navy blue */
+  color: #ffffff; /* dark golden text for contrast */
+  margin: 0;
+  padding: 0;
+}
+
+/* Buttons and Selects */
+button, select {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ffde59; /* bright yellow */
+  color: #4a3f00;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  transition: background-color 0.2s;
+}
+
+button:hover, select:hover {
+  background-color: #ffd633; /* slightly darker yellow on hover */
+  color: #ffffff;
+}
+
+/* Long Text Buttons */
+button {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Page Layouts */
+.page {
+  padding: 20px;
+}
+
+/* Home Page Subject Buttons */
+.center-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 100px;
+}
+
+/* Solution Page Layout */
+#solution-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: rgb(3, 30, 80) ; /* dark navy blue */
+}
+
+/* Top Button Controls */
+#solution-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+/* Solution Display Area */
+#solution-display {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.5rem;
+  overflow: auto;
+}
+
+/* Image Scaling */
+#solution-display img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 2px solid #ffde59;
+  border-radius: 8px;
+}
+
+/* Navigation Bar */
+#solution-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+

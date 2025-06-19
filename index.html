@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flashcard Study Tool</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Home Page -->
+<div id="home-page" class="page">
+  <div id="subjects" class="center-buttons"></div>
+
+  <button class="bottom-left" onclick="createSubject()">Add Subject</button>
+  <div class="bottom-right">
+    <select id="delete-subject-dropdown"></select>
+    <button onclick="deleteSubject()">Delete Subject</button>
+  </div>
+</div>
+
+
+
+  <!-- Class Page -->
+  <div id="class-page" style="display:none;">
+    <h2>Class Page</h2>
+    <div id="classes"></div>
+    <button onclick="createClass()">Add Class</button>
+    <select id="delete-class-dropdown"></select>
+    <button onclick="deleteClass()">Delete Class</button>
+    <button onclick="goToHomePage()">Back to Home</button>
+  </div>
+
+  <!-- Question Page -->
+  <div id="question-page" style="display:none;">
+    <h2>Question Page</h2>
+    <div id="questions"></div>
+    <button onclick="createQuestion()">Add Question</button>
+    <select id="delete-question-dropdown"></select>
+    <button onclick="deleteQuestion()">Delete Question</button>
+    <button onclick="goToWheelPage()">🎡 Spin the Wheel</button>
+    <button class="top-right" onclick="goToClassPage(currentSubject)">Back to Classes</button>
+    <button onclick="goToHomePage()"> Back to Home</button>
+
+  </div>
+
+<!-- Solution Page -->
+<div id="solution-page" style="display:none;">
+    <!-- Navigation -->
+  <div id="solution-nav">
+    <button onclick="prevSolutionStep()">Previous</button>
+    <button onclick="nextSolutionStep()">Next</button>
+    <button onclick="goToQuestionPage(currentClass)">Back</button>
+    <button onclick="goToHomePage()">Home</button>
+  </div>
+
+  <!-- Display Area -->
+  <div id="solution-display"></div>
+<!-- Top Controls -->
+  <div id="solution-controls">
+    <button onclick="addSolutionText()">Add Text</button>
+    <input type="file" id="image-upload" accept="image/*" />
+    <button onclick="addSolutionImage()">Add Image</button>
+    <button onclick="deleteCurrentSolution()">Delete</button>
+  </div>
+</div>
+
+
+<!-- Wheel Page -->
+<div id="wheel-page" class="page" style="display:none;">
+  <canvas id="wheel-canvas" width="400" height="400"></canvas>
+  <br />
+  <button onclick="spinWheel()">🎡 Spin</button>
+  <button onclick="goBack()">Back</button>
+</div>
+
+
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

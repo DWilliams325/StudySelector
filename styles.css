@@ -167,3 +167,10 @@ button {
     padding: 10px;
   }
 }
+
+@media (max-width: 600px) {
+  #welcome-message {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+}

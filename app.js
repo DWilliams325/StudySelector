@@ -40,6 +40,14 @@ function getCurrentSolutionSteps() {
   return question.solutionSteps;
 }
 
+function setWelcomeMessage() {
+  const name = prompt("Enter your name:")?.trim();
+  if (name) {
+    document.getElementById("welcome-message").textContent = `Welcome, ${name}!`;
+    localStorage.setItem("flashcardUserName", name); // Save name
+  }
+}
+
 
 // Page Switching
 function hideAllPages() {
@@ -70,7 +78,17 @@ function goBack() {
 function goToHomePage() {
   switchPage("home-page");
   loadSubjects();
+
+  // Set name from localStorage or ask for it
+  const name = localStorage.getItem("flashcardUserName");
+  const welcomeMessage = document.getElementById("welcome-message");
+  if (name) {
+    welcomeMessage.textContent = `Lets study, ${name}!`;
+  } else {
+    setWelcomeMessage();
+  }
 }
+
 
 function goToClassPage(subjectName) {
   currentSubject = subjectName;
@@ -310,13 +328,14 @@ function renderCurrentSolution() {
   }
 
   const step = steps[currentSolutionIndex];
-  if (step.type === "text") {
-    const textElem = document.createElement("div");
-    textElem.textContent = step.content;
-    textElem.style.fontSize = "1.5rem";
-    textElem.style.padding = "20px";
-    display.appendChild(textElem);
-  } else if (step.type === "image") {
+ if (step.type === "text") {
+  const textElem = document.createElement("div");
+  textElem.textContent = step.content;
+  textElem.style.maxWidth = "80%";
+  textElem.style.wordWrap = "break-word";
+  display.appendChild(textElem);
+
+}else if (step.type === "image") {
     const img = document.createElement("img");
     img.src = step.content;
     img.alt = "Solution Image";

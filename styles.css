@@ -58,22 +58,39 @@ button {
 
 /* Top Button Controls */
 #solution-controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(3, 30, 80); /* match your theme */
   display: flex;
   justify-content: center;
   gap: 10px;
   padding: 10px;
+  z-index: 10;
 }
+
 
 /* Solution Display Area */
 #solution-display {
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: center;  /* horizontal centering */
+  align-items: center;      /* vertical centering */
+  text-align: center;       /* centers text inside child divs */
   padding: 20px;
-  font-size: 1.5rem;
+  font-size: 2rem;          /* adjust as needed */
   overflow: auto;
 }
+
+#solution-display div {
+  font-size: 4rem !important; /* or adjust larger if needed */
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  padding: 30px;
+}
+
 
 /* Image Scaling */
 #solution-display img {
@@ -99,4 +116,15 @@ button {
   padding: 40px 20px;
   max-width: 90%;
   margin: auto;
+}
+
+#welcome-container {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+  font-size: 2rem;
+  color: #ffde59;
 }

@@ -91,3 +91,12 @@ button {
   padding: 10px;
 }
 
+#question-content {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ffde59;
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 90%;
+  margin: auto;
+}

@@ -86,6 +86,16 @@ function goToQuestionPage(className) {
   loadQuestions();
 }
 
+function goToQuestionViewPage(index) {
+  currentQuestionIndex = index;
+  pageHistory.push("question-view-page");
+  switchPage("question-view-page");
+
+  const question = data[currentSubject][currentClass][index].question;
+  document.getElementById("question-content").textContent = question;
+}
+
+
 function goToSolutionPage(index) {
   currentQuestionIndex = index;
   pageHistory.push("solution-page");
@@ -148,7 +158,7 @@ function loadQuestions() {
   list.forEach((q, i) => {
     const btn = document.createElement("button");
     btn.textContent = q.question;
-    btn.onclick = () => goToSolutionPage(i);
+    btn.onclick = () => goToQuestionViewPage(i);
     container.appendChild(btn);
 
     const opt = document.createElement("option");
@@ -376,7 +386,7 @@ function spinWheel() {
       const finalAngle = wheelAngle % (2 * Math.PI);
       const index = sliceCount - Math.floor(finalAngle / sliceAngle) - 1;
       spinning = false;
-      goToSolutionPage(index);
+      goToQuestionViewPage(index);
       return;
     }
 

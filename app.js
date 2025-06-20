@@ -250,6 +250,25 @@ function deleteQuestion() {
   loadQuestions();
 }
 
+function editUserName() {
+  const name = prompt("Enter your name:");
+  if (name) {
+    localStorage.setItem("username", name);
+    updateWelcomeMessage();
+  }
+}
+
+function updateWelcomeMessage() {
+  const name = localStorage.getItem("username") || "Guest";
+  const message = document.getElementById("welcome-message");
+  message.textContent = `Let's study, ${name}!`;
+}
+
+
+// Call it once on page load
+updateWelcomeMessage();
+
+
 
 //Image handling/Solution Page 
 function addSolutionImage() {

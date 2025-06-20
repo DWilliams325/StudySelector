@@ -128,6 +128,31 @@ button {
   font-size: 2rem;
   color: #ffde59;
 }
+
+#welcome-container {
+  position: relative;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+
+#welcome-message {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffde59;
+}
+
+#edit-name-btn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #ffde59;
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   body {
     font-size: 16px;
@@ -173,4 +198,12 @@ button {
     font-size: 1.5rem;
     margin-top: 10px;
   }
+}
+#edit-name-btn {
+  margin-left: 10px;
+  background-color: #ffd633;
+  color: #031e50;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
 }

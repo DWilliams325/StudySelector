@@ -207,3 +207,41 @@ button {
   padding: 5px 10px;
   font-size: 0.9rem;
 }
+/* Responsive tweaks for phones in portrait mode */
+@media screen and (max-width: 600px) {
+  #welcome-container {
+    font-size: 1.2rem;
+    margin-top: 5px;
+  }
+
+  #welcome-message {
+    font-size: 1.4rem;
+  }
+
+  #edit-name-btn {
+    font-size: 1rem;
+    right: 5px;
+    top: 0;
+  }
+
+  .center-buttons {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 40px;
+  }
+
+  button, select {
+    width: 90%;
+    max-width: 300px;
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .bottom-left, .bottom-right {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+}
